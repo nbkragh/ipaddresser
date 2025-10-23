@@ -3,7 +3,7 @@
     {
       "id": "3d1e",
       "IP": "6.6.6.0",
-      "Description": "den tredjeste",
+      "Description": "den tredje",
       "VLAN": "2"
     },
     {
@@ -11,6 +11,30 @@
       "IP": "0.0.0.1",
       "Description": "den første",
       "VLAN": "2"
+    },
+    {
+      "id": "632e",
+      "IP": "192.168.0.1",
+      "Description": "her",
+      "VLAN": "1"
+    },
+    {
+      "id": "e1bf",
+      "IP": "1.2.3.4",
+      "Description": "klar",
+      "VLAN": "1"
+    },
+    {
+      "id": "eafe",
+      "IP": "1.1.1.1",
+      "Description": "something",
+      "VLAN": "3"
+    },
+    {
+      "id": "cd24",
+      "IP": "255.255.255.255",
+      "Description": "den sidste",
+      "VLAN": "3"
     }
   ]
 }
