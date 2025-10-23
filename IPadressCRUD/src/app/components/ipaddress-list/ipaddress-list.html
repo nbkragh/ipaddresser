@@ -1,0 +1,42 @@
+
+
+  <div class="table-responsive">
+      <div class="mb-2">
+      <input
+        type="text"
+        class="form-control searchInput"
+        placeholder="IP, description, eller VLAN..."
+        (input)="setSearch($event.target.value)"
+        />
+    </div>
+    <table class="table align-middle table-hover">
+      <thead class="table-light">
+        <tr>
+          <th scope="col" (click)="setSort('id')" class="sortable">ID</th>
+          <th scope="col" (click)="setSort('IP')" class="sortable">IP Address</th>
+          <th scope="col" (click)="setSort('Description')" class="sortable">Description</th>
+          <th scope="col" (click)="setSort('VLAN')" class="sortable">VLAN</th>
+          <th scope="col" class="text-end"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ip of filteredIPList$ | async">
+          <td  class="text-truncate" style="max-width: 150px;">{{ ip.id }}</td>
+          <td  class="text-truncate" style="max-width: 150px;">{{ ip.IP }}</td>
+          <td  class="text-truncate" style="max-width: 150px;">{{ ip.Description }}</td>
+          <td  class="text-truncate" style="max-width: 150px;">{{ ip.VLAN }}</td>
+          <td>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)="onEditIPaddress(ip)"><i class="bi bi-pencil"></i>Edit</button>
+              <button type="button" class="btn btn-sm btn-outline-danger ms-2" (click)="deleteIPaddress(ip)"><i class="bi bi-trash"></i>Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="!(filteredIPList$ | async)?.length">
+            <td colspan="5" class="text-center text-muted py-4">
+              No IP addresses added yet.
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>

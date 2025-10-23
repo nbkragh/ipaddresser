@@ -1,0 +1,16 @@
+{
+  "ipaddress": [
+    {
+      "id": "3d1e",
+      "IP": "6.6.6.0",
+      "Description": "den tredjeste",
+      "VLAN": "2"
+    },
+    {
+      "id": "1",
+      "IP": "0.0.0.1",
+      "Description": "den første",
+      "VLAN": "2"
+    }
+  ]
+}

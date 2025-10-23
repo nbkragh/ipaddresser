@@ -1,0 +1,40 @@
+
+
+<main class="main">
+  <div class="container py-5">      
+    <div *ngIf="message" class="alert alert-{{ messageType }} position-fixed top-0 start-50 translate-middle-x mt-3 shadow-sm" role="alert">
+        {{ message }}
+      </div>
+      <div class="text-center mb-5">
+      <h1 class="fw-bold text-primary">IP Address Manager</h1>
+      <p class="text-muted">Add, update, or remove IP addresses below</p>
+
+    </div>
+  
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-5">
+          <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body">
+              <h5 class="card-title text-secondary mb-3">
+                {{ selectedIP ? 'Edit IP Address' : 'Add New IP Address' }}
+              </h5>
+            <ipaddress-form
+              [ipToEdit]="selectedIP"
+              (formSubmitted)="announceResult($event)"> 
+            </ipaddress-form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <h5 class="card-title text-secondary mb-3">All IP Addresses</h5>
+          <ipaddress-list
+            (editRequested)="editIP($event)"
+            (deleteResultInfo)="announceResult($event)"> 
+          </ipaddress-list>
+              
+        </div>
+      </div>
+
+  </div>
+</main>
